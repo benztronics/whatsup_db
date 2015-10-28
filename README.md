@@ -25,14 +25,18 @@ type : artist
 
 type : region
   name : input
+  gps_n : Northern GPS boundary
+  gps_s : Southern GPS boundary
+  gps_e : Eastern GPS boundary
+  gps_w : Western GPS boundary
   {This will be used to control expansion sites}
 
 type : agegroup
   name : input
 
-type : crawler
+type : crawler    #for adding new sites to seach and tags to search on
   site : input
-  tag : (list input)
+  tag : (list input)  
 
 type : event    #brings it all together
   venue : {venue ID}
@@ -43,5 +47,10 @@ type : event    #brings it all together
   endtime : DTIME
   price : input
   hashtag : input
+  media : {link}  #maybe a photo of event poster... it'd be cool if we could auto populate from the poster
 
-
+type : Approver
+  name : input
+  email : input
+  pushID : input  #some kind of device address that pings for approvals
+  region : (regionID, list,)
